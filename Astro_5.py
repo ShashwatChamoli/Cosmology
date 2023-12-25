@@ -21,6 +21,7 @@ for i in range(len(gamma)):
     proper_dist = []
     lum_dist = []
     ang_dist = []
+    print(f"For {words_array[i]} :")
     for z in z_val:
         dist, _ = quad(formula, 0, z, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         comoving_dist.append(dist)
@@ -28,24 +29,29 @@ for i in range(len(gamma)):
         lum_dist.append((1+z)*dist)
         ang_dist.append(dist/(1+z))
     #Comoving distance
+    print(f"At z = ", z_val)
+    print("Comoving distance is(in terms of 1/H0) ", comoving_dist, "correspondingly")
     plt.scatter(z_val, comoving_dist)
     plt.ylabel('Comoving dist in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Comoving distance vs Redshift for {words_array[i]}")
     plt.show()
     #Proper distance
+    print("Proper distance is(in terms of 1/H0) ", proper_dist, "correspondingly")
     plt.scatter(z_val, proper_dist)
     plt.ylabel('Proper dist in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Proper distance vs Redshift for {words_array[i]}")
     plt.show()
     #Luminosity distance
+    print("Luminosity distance is(in terms of 1/H0) ", lum_dist, "correspondingly")
     plt.scatter(z_val, lum_dist)
     plt.ylabel('Luminosity distance in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Luminosity distance vs Redshift for {words_array[i]}")
     plt.show()
-    #Angular Diameter distance
+    #Angular distance
+    print("Angular distance is(in terms of 1/H0) ", ang_dist, "correspondingly")
     plt.scatter(z_val, ang_dist)
     plt.ylabel('Angular Diameter distance in 1/H0')
     plt.xlabel('Redshift(z)')
@@ -67,6 +73,7 @@ for i in range(len(gamma)):
     proper_dist = []
     lum_dist = []
     ang_dist = []
+    print(f"For {words_array[i]} :")
     for z in z_val_fifth_question:
         dist, _ = quad(formula, 0, z, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         comoving_dist.append(dist)
@@ -74,24 +81,29 @@ for i in range(len(gamma)):
         lum_dist.append((1+z)*dist)
         ang_dist.append(dist/(1+z))
     #Comoving distance
+    print(f"At z = ", z_val_fifth_question)
+    print("Comoving distance is(in terms of 1/H0) ", comoving_dist, "correspondingly")
     plt.scatter(z_val_fifth_question, comoving_dist)
     plt.ylabel('Comoving dist in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Comoving distance vs Redshift for {words_array[i]}")
     plt.show()
     #Proper distance
+    print("Proper distance is(in terms of 1/H0) ", proper_dist, "correspondingly")
     plt.scatter(z_val_fifth_question, proper_dist)
     plt.ylabel('Proper dist in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Proper distance vs Redshift for {words_array[i]}")
     plt.show()
     #Luminosity distance
+    print("Luminosity distance is(in terms of 1/H0) ", lum_dist, "correspondingly")
     plt.scatter(z_val_fifth_question, lum_dist)
     plt.ylabel('Luminosity distance in 1/H0')
     plt.xlabel('Redshift(z)')
     plt.title(f"Luminosity distance vs Redshift for {words_array[i]}")
     plt.show()
     #Angular Diameter distance
+    print("Angular distance is(in terms of 1/H0) ", ang_dist, "correspondingly")
     plt.scatter(z_val_fifth_question, ang_dist)
     plt.ylabel('Angular Diameter distance in 1/H0')
     plt.xlabel('Redshift(z)')
