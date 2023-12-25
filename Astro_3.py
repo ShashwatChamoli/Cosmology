@@ -19,10 +19,13 @@ def formula(z,omega_m, omega_de, gamma):
 for i in range(len(gamma)):
     univ_age_old = []
     univ_age = []
+    print(f"For {words_array[i]} :")
     for z in z_val:
         age, _ = quad(formula, z, 100000, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         univ_age_old.append(age)
         univ_age = [x*(3e10/3.15e7) for x in univ_age_old]    #For converting to Gyr
+    print(f'At z = {z_val}')
+    print("Age of the universe is ", univ_age, " in Gyr correspondingly")
     plt.scatter(z_val, univ_age)
     plt.ylabel('Age of the Universe in Gyr')
     plt.xlabel('Redshift(z)')
@@ -41,10 +44,13 @@ words_array = ["Flat Lambda CDM model with T0 = 100k"]
 for i in range(len(gamma)):
     univ_age_old = []
     univ_age = []
+    print(f"For {words_array[i]} :")
     for z in z_val_fifth_question:
         age, _ = quad(formula, z, 100000, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         univ_age_old.append(age)
         univ_age = [x*(3e10/3.15e7) for x in univ_age_old]    #For converting to Gyr
+    print(f'At z = {z_val_fifth_question}')
+    print("Age of the universe is ", univ_age, " in Gyr correspondingly")
     plt.scatter(z_val_fifth_question, univ_age)
     plt.ylabel('Age of the Universe in Gyr')
     plt.xlabel('Redshift(z)')
