@@ -18,10 +18,14 @@ def formula(z,omega_m, omega_de, gamma):
 
 for i in range(len(gamma)):
     lookback_time_old = []
+    lookback_time = []
+    print(f"For {words_array[i]} :")
     for z in z_val:
         time, _ = quad(formula, 0, z, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         lookback_time_old.append(time)
         lookback_time = [x*(3e10/3.15e7) for x in lookback_time_old]    #For converting to Gyr
+    print(f'At z = {z_val}')
+    print("Lookback time is ", lookback_time, " in Gyr correspondingly")
     plt.scatter(z_val, lookback_time)
     plt.ylabel('Lookback time in Gyr')
     plt.xlabel('Redshift(z)')
@@ -40,10 +44,14 @@ words_array = ["Flat Lambda CDM model with T0 = 100k"]
 
 for i in range(len(gamma)):
     lookback_time_old = []
+    lookback_time = []
+    print(f"For {words_array[i]} :")
     for z in z_val_fifth_question:
         time, _ = quad(formula, 0, z, args=(omega_m_val[i], omega_de_val[i], gamma[i]))
         lookback_time_old.append(time)
         lookback_time = [x*(3e10/3.15e7) for x in lookback_time_old]    #For converting to Gyr
+    print(f'At z = {z_val_fifth_question}')
+    print("Lookback time is ", lookback_time, " in Gyr correspondingly")
     plt.scatter(z_val_fifth_question, lookback_time)
     plt.ylabel('Lookback time in Gyr')
     plt.xlabel('Redshift(z)')
